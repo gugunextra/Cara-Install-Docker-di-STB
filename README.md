@@ -23,11 +23,7 @@ deb [arch=arm64] https://download.docker.com/linux/ubuntu bionic stable
 ## Langkah Berikutnya install Docker Container di STB Armbian
 
 ```
-apt-get update -y
-```
-
-```
-apt-get upgrade -y
+apt-get update && upgrade -y
 ```
 
 ```
