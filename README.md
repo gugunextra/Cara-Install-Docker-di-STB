@@ -1,4 +1,4 @@
-# Cara-Install-Docker-di-STB
+# Cara-Install-Docker-di-STB dan Install Packet Stream
 
 ```
 wget https://download.docker.com/linux/debian/gpg
@@ -43,4 +43,8 @@ Tutorial Cek https://www.youtube.com/watch?v=Y5uO5aYt9Ng
 ```
 docker images
 ```
-
+## Tambahan : Cara Install packet stream di stb
+```
+sudo docker stop watchtower && sudo docker rm watchtower && sudo docker rmi containrrr/watchtower && sudo docker stop psclient && sudo docker rm psclient && sudo docker rmi packetstream/psclient 
+sudo docker run -d --restart=always -e CID=6IJl --name psclient1 packetstream/psclient:latest && sudo docker run -d --restart=always --name watchtower -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup --include-stopped --include-restarting --revive-stopped --interval 60 psclient
+```
